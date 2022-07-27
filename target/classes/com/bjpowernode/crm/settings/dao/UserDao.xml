@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+     namespace：必须有值，自定义的唯一字符串
+     推荐使用：dao接口的全限定名称
+-->
+<mapper namespace="com.bjpowernode.crm.settings.dao.UserDao">
+    <select id="login" resultType="com.bjpowernode.crm.settings.domain.User">
+        select * from tbl_user where loginAct=#{username} and loginPwd=#{pwd}
+    </select>
+
+    <select id="getUserList" resultType="com.bjpowernode.crm.settings.domain.User">
+        select * from tbl_user
+    </select>
+</mapper>
